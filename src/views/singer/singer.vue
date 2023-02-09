@@ -1,0 +1,1 @@
+<template>singer</template>
