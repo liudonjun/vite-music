@@ -63,11 +63,11 @@
         </div>
       </div>
     </Scroll>
-    <router-view :style="viewStyle" v-slot="{ Component }">
+    <!-- <router-view :style="viewStyle" v-slot="{ Component }">
       <transition appear name="slide">
         <component :is="Component" :singer="selectSingerData" />
       </transition>
-    </router-view>
+    </router-view> -->
   </div>
 </template>
 <script lang="ts" setup>
