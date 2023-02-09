@@ -71,15 +71,15 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { onBeforeMount, ref, computed } from 'vue'
+import { onBeforeMount, ref, computed, PropType } from 'vue'
 import { getBanner, getplayList, getplayList2 } from '../../api/api'
-import { bannerItem, albumsItem } from './types'
+import { bannerItem, albumsItem, topBtnOptionType } from './types'
 import { filterNumber } from '../../utils/util'
 import useViewStyle from '../../hooks/useViewStyle'
 import Slider from '@comp/base/slider/slider.vue'
 import Scroll from '@comp/base/scroll/scroll.vue'
 import { useRouter } from 'vue-router'
-const topBtnOption = [
+const topBtnOption = ref([
   {
     id: 'tuijian',
     flag: true,
@@ -90,7 +90,7 @@ const topBtnOption = [
     flag: false,
     name: '热门'
   }
-]
+] as Array<topBtnOptionType>)
 const router = useRouter()
 
 const isLoading = ref(false)

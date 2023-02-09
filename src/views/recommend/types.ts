@@ -13,4 +13,10 @@ type albumsItem = {
   'desc': string
 }
 
-export type { bannerItem, albumsItem }
+type topBtnOptionType = {
+  id: string
+  flag: boolean
+  name: string
+}
+
+export type { bannerItem, albumsItem, topBtnOptionType }
