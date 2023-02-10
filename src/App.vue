@@ -1,10 +1,10 @@
 <template>
   <Header />
   <Tab />
-  <router-view></router-view>
-  <!-- <router-view :style="viewStyle" v-slot="{ Component }">
+  <!-- <router-view></router-view> -->
+  <router-view :style="viewStyle" v-slot="{ Component }">
     <keep-alive>
-      <component :is="Component" /> 
+      <component :is="Component" />
     </keep-alive>
   </router-view>
   <router-view name="user" :style="viewStyle" v-slot="{ Component }">
@@ -13,7 +13,7 @@
         <component :is="Component" />
       </transition>
     </keep-alive>
-  </router-view> -->
+  </router-view>
 </template>
 <script lang="ts" setup>
 import Header from '@comp/header/header.vue'

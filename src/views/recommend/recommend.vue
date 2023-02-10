@@ -63,16 +63,16 @@
         </div>
       </div>
     </Scroll>
-    <!-- <router-view :style="viewStyle" v-slot="{ Component }">
+    <router-view :style="viewStyle" v-slot="{ Component }">
       <transition appear name="slide">
         <component :is="Component" :singer="selectSingerData" />
       </transition>
-    </router-view> -->
+    </router-view>
   </div>
 </template>
 <script lang="ts" setup>
 import { onBeforeMount, ref, computed, PropType } from 'vue'
-import { getBanner, getplayList, getplayList2 } from '../../api/api'
+import { getBanner, getplayListNew, getplayListHot } from '../../api/api'
 import { bannerItem, albumsItem, topBtnOptionType } from './types'
 import { filterNumber } from '../../utils/util'
 import useViewStyle from '../../hooks/useViewStyle'
@@ -106,8 +106,8 @@ const hosts = ref([] as Array<albumsItem>)
 // 页面初始化
 onBeforeMount(async () => {
   const p1: Promise<any> = getBanner()
-  const p2: Promise<any> = getplayList()
-  const p3: Promise<any> = getplayList2()
+  const p2: Promise<any> = getplayListNew()
+  const p3: Promise<any> = getplayListHot()
   Promise.all([p1, p2, p3]).then(([res1, res2, res3]) => {
     loading.value = false
     if (res1.success) {

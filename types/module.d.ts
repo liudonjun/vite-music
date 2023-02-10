@@ -6,17 +6,28 @@ declare module '*.vue' {
 }
 
 /**播放器模式声明文件 */
-declare module '@/util/common.ts' {
-  export namespace PLAY_MODE {
-    const sequence: number
-    const loop: number
-    const random: number
-  }
-}
+// declare module '@/util/common.ts' {
+//   export namespace PLAY_MODE {
+//     const sequence: number
+//     const loop: number
+//     const random: number
+//   }
+// }
 /**API声明文件 */
 declare module '@/api/api.ts' {
   export function getBanner(): Promise
-  export function getplayList(): Promise
+  export function getplayListNew(): Promise
+  export function getplayListHot(): Promise
+  export function getBannerPlayList(id: string, pn: number, rn: number): Promise
+  export function getplayListDetail(id: string, pn: number, rn: number): Promise
+  export function getSingerList(): Promise
+  export function getSingerDetail(id: string, pn: number, rn: number): Promise
+  export function getLyric(id: number): Promise
+  export function getSongUrl(id: number, type?: number): Promise
+  export function getTopList(): Promise
+  export function getTopListDetail(id: string, pn: number, rn: number): Promise
+  export function getHotSearch(): Promise
+  export function getSearchList(id: string, pn: number, rn: number): Promise
 }
 
 /**axios声明 */
