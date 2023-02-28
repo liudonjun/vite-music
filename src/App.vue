@@ -14,10 +14,12 @@
       </transition>
     </keep-alive>
   </router-view>
+  <Player></Player>
 </template>
 <script lang="ts" setup>
 import Header from '@comp/header/header.vue'
 import Tab from '@comp/tab/tab.vue'
+import Player from "@comp/player/player.vue";
 import { computed } from 'vue'
 import { mainStore } from './store/index'
 const store = mainStore()

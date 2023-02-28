@@ -116,7 +116,7 @@ const selectItem = async (item: object, index: number) => {
   //   value: res1.data.url,
   // });
 
-  // store.setlectPlay(props.songs, index)
+  store.setlectPlay(props.songs, index)
 }
 
 const random = async () => {

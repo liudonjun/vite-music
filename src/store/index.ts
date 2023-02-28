@@ -4,6 +4,7 @@ import { shuffle } from '../utils/util.js'
 import { getSongUrl, getLyric } from '@/api/api.ts'
 import { load } from '../utils/array-store'
 
+// TODO 待处理setup语法重写
 const mainStore = defineStore('main', {
   state: () => {
     return {

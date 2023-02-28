@@ -8,33 +8,29 @@
   </teleport>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'message',
-  props: {
-    delay: {
-      type: Number,
-      default: 2000
-    }
-  },
-  data() {
-    return {
-      visible: false
-    }
-  },
-  methods: {
-    show() {
-      this.visible = true
-      clearTimeout(this.timer)
-      this.timer = setTimeout(() => {
-        this.hide()
-      }, this.delay)
-    },
-    hide() {
-      clearTimeout(this.timer)
-      this.visible = false
-    }
+<script lang="ts" setup>
+import { defineProps, ref } from 'vue'
+
+const props = defineProps({
+  delay: {
+    type: Number,
+    default: 2000
   }
+})
+
+const visible = ref(false)
+let timer: any = ref(null)
+
+const show = () => {
+  visible.value = true
+  clearTimeout(timer)
+  timer = setTimeout(() => {
+    hide()
+  }, props.delay)
+}
+const hide = () => {
+  clearTimeout(timer)
+  visible.value = false
 }
 </script>
 
